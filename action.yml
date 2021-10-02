@@ -10,7 +10,7 @@ inputs:
     default: "./docs"
     required: false
 runs:
-  using: node14
+  using: node12
   main: src/index.js
 branding:
   icon: 'activity'
