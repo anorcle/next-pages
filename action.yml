@@ -11,7 +11,7 @@ inputs:
     required: false
 runs:
   using: node12
-  main: src/index.js
+  main: dist/index.js
 branding:
   icon: 'activity'
   color: '#8D33FF'

@@ -2,8 +2,11 @@
   "name": "@anorcle/next-pages",
   "version": "1.0.0",
   "description": "Use this workflow in your Next Project to build and deploy your static sites on Github",
-  "main": "index.js",
-  "scripts": {},
+  "main": "./src/index.js",
+  "private": true,
+  "scripts": {
+    "build": "parcel build --no-source-maps --target=node --bundle-node-modules ./src/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anorcle/next-pages.git"
@@ -21,5 +24,8 @@
   "homepage": "https://github.com/anorcle/next-pages#readme",
   "dependencies": {
     "@actions/core": "^1.6.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
   }
 }
