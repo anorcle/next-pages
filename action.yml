@@ -1,0 +1,17 @@
+name: 'Next Pages'
+description: 'Build Next.js App for GitHub Pages'
+inputs:
+  inputDir:
+    description: 'Next.js Export Directory'
+    required: false
+    default: "./out"
+  outputDir:
+    description: 'GitHub Pages Host Directory'
+    default: "./docs"
+    required: false
+runs:
+  using: node14
+  main: src/index.js
+branding:
+  icon: 'activity'
+  color: '#8D33FF'
