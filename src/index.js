@@ -1,5 +1,4 @@
 const fs = require("fs")
-const path = require("path")
 const core = require('@actions/core');
 
 const inputDir = core.getInput('inputDir', { required: true })
@@ -31,7 +30,7 @@ const findUnderscoreReplacements = async (parent) => {
         // Loop them all with the new for...of
         for (const file of files) {
             // Get the full paths
-            const fullpath = path.join(parent, file);
+            const fullpath = `${parent}/${file}`
             const stat = await fs.promises.stat(fullpath);
             if (stat.isDirectory()) {
                 await findUnderscoreReplacements(fullpath)
@@ -61,7 +60,7 @@ const replaceUnderscores = async (parent) => {
         // Loop them all with the new for...of
         for (const file of files) {
             // Get the full paths
-            const fullpath = path.join(parent, file);
+            const fullpath = `${parent}/${file}`
             const stat = await fs.promises.stat(fullpath);
 
             if (stat.isFile()) {
@@ -81,7 +80,7 @@ const replaceUnderscores = async (parent) => {
             replacements.forEach(re => {
                 newName = newName.replace(re.find, re.replace)
             })
-            await fs.promises.rename(fullpath, path.join(parent, newName))
+            await fs.promises.rename(fullpath, `${parent}/${newName}`)
         }
     }
     catch (e) {
@@ -92,13 +91,12 @@ const replaceUnderscores = async (parent) => {
 }
 
 (async function() {
-    const parent = path.join(__dirname, outputDir)
 
-    await findUnderscoreReplacements(parent)
+    await findUnderscoreReplacements(outputDir)
 
     console.log("Replacements:", replacements)
 
-    await replaceUnderscores(parent);
+    await replaceUnderscores(outputDir);
 
     console.log("next-pages build successful 🤩")
 })()
