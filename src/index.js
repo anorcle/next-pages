@@ -1,8 +1,9 @@
 const fs = require("fs")
 const core = require('@actions/core');
 
-const inputDir = core.getInput('inputDir', { required: true })
-const outputDir = core.getInput('outputDir', { required: true })
+// Read the paths and remove trailing '/'
+const inputDir = core.getInput('inputDir', { required: true }).replace(/\/+$/g, "")
+const outputDir = core.getInput('outputDir', { required: true }).replace(/\/+$/g, "")
 
 try {
     fs.rmdirSync(outputDir, { recursive: true });
