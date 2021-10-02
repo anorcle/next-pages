@@ -1,4 +1,4 @@
-# Build and Deploy Next.js App on GitHub Pages
+# Build and Deploy Next.js App to GitHub Pages
 
 Use this workflow in your Next Project to build and deploy your static sites on Github
 
