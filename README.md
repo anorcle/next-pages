@@ -3,7 +3,7 @@
 Use this workflow in your Next Project to build and deploy your static sites on Github
 
 ## Introduction
-By default, ```next export``` will generate an ```out``` directory, which can be served by any static hosting service or CDN like GitHub Pages. But the name of inner directories (like ```_next/```) and chunk files start with *underscore* and GitHub Pages return ```404``` for such files. **Next Pages** automatically rename those files and folders and remove the beginning *underscore* and also replace the new URL in your source code. Also, **Next Pages** rename your ```out``` directory to ```docs```.
+By default, ```next export``` will generate an ```out``` directory, which can be served by any static hosting service or CDN like GitHub Pages. But the name of inner directories (like ```_next/```) and chunk files start with *underscore* and GitHub Pages return ```404``` for such files. **Next Pages** automatically rename those files and folders, remove the beginning *underscore* and replace the new URL in your source code. Also, **Next Pages** rename your ```out``` directory to ```docs```.
 
 ## Setup GitHub Pages
 ![image](https://user-images.githubusercontent.com/44930179/135717105-2b70de01-8d30-41b3-8d69-f7827b8289f6.png)
