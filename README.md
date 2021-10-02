@@ -111,3 +111,6 @@ jobs:
           git commit -m "New Build"
           git push
 ```
+
+### Sample Output
+![image](https://user-images.githubusercontent.com/44930179/135730924-58b070d6-0040-478e-9e24-c65a041aa22e.png)
