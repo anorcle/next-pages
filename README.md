@@ -39,3 +39,4 @@ jobs:
 ```
 
 ## Setup GitHub Pages
+![image](https://user-images.githubusercontent.com/44930179/135717105-2b70de01-8d30-41b3-8d69-f7827b8289f6.png)
