@@ -27,8 +27,8 @@ jobs:
       - run: |
           npm i
           npm run build
-			- name: Next Pages
-				uses: anorcle/next-pages@v1.0
+      - name: Next Pages
+        uses: anorcle/next-pages@v1.0
       - name: Commit and push changes
         run: |
           git config --global user.name "anorcle"
