@@ -13,5 +13,5 @@ runs:
   using: node12
   main: dist/index.js
 branding:
-  icon: 'activity'
-  color: '#8D33FF'
+  icon: 'cloud'
+  color: 'purple'
