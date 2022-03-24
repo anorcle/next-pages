@@ -52,6 +52,8 @@ const findUnderscoreReplacements = async (parent) => {
     }
 }
 
+const validExtensions = ['html', 'js']
+
 const replaceUnderscores = async (parent) => {
     // Our starting point
     try {
@@ -62,9 +64,10 @@ const replaceUnderscores = async (parent) => {
         for (const file of files) {
             // Get the full paths
             const fullpath = `${parent}/${file}`
+            const extension = file.slice(file.lastIndexOf('.')+1)
             const stat = await fs.promises.stat(fullpath);
 
-            if (stat.isFile()) {
+            if (stat.isFile() && validExtensions.includes(extension)) {
                 let fileContent = await fs.promises.readFile(fullpath, "utf-8")
 
                 replacements.forEach(re => {
